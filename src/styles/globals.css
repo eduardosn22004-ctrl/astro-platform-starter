@@ -1,18 +1,30 @@
 @import 'tailwindcss';
 
-@@theme {
+/* Fonte padrão */
+@theme {
     --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --color-primary: #f67280;
-    --color-primary-content: #101828;
-    --color-complementary: #355c7d;
-    --background-image-noise: linear-gradient(
-            to bottom,
-            color-mix(in oklab, var(--color-gray-950) 0%, transparent),
-            color-mix(in oklab, var(--color-gray-950) 100%, transparent)
-        ),
-        url('/images/noise.png');
 }
 
+/* Fundo pastel */
+.bg-pastel {
+  background-color: #f4f1ee; /* cor pastel clara */
+}
+
+/* Fundo com textura */
+.bg-noise-img {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.03) 0%,
+      rgba(0,0,0,0.03) 100%
+    ),
+    url('/images/noise.png');
+}
+
+/* Reset básico */
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+}
 @layer base {
     h1 {
         @apply text-4xl font-bold tracking-tight sm:text-5xl;
